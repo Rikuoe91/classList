@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      List Header
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngFor="let speaker of speakerList | async ">
+    <li>
+      {{speaker.name}}
+      {{speaker.email}}
+    </li>
+  </ion-list>
+
+</ion-content>
