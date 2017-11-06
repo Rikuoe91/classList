@@ -8,11 +8,23 @@
 
 <ion-content padding>
 
-  <ion-list *ngFor="let speaker of speakerList | async ">
-    <li>
-      {{speaker.name}}
-      {{speaker.email}}
-    </li>
+  <ion-list *ngFor="let speakers of speakerList | async ">
+    <ion-header>
+      {{speakers.listHeader}}
+    </ion-header>
+
+    <button ion-item *ngFor="let info of speakers.speakerInfo" (click)="itemClicked(info)">
+      {{info.name}}
+      {{info.email}}
+    </button>
+
   </ion-list>
+
+  <!--<ion-list *ngFor="let speaker of speakerList | async ">-->
+  <!--<li>-->
+  <!--{{speaker.name}}-->
+  <!--{{speaker.email}}-->
+  <!--</li>-->
+  <!--</ion-list>-->
 
 </ion-content>
